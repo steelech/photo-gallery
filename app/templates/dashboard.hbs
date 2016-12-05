@@ -1,4 +1,5 @@
 {{navbar-header logout="logout"}}
-{{dashboard-content changeTab="changeTab"}}
-{{!-- {{dashboard-navbar changeTab="changeTab"}} --}}
-{{!-- {{component listName}} --}}
+<div class="dashboard-content-container">
+	{{dashboard-navbar changeTab="changeTab"}}
+	{{outlet}}
+</div>
