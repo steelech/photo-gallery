@@ -1,22 +1,21 @@
-#photos-navbar-all {
+.photos-navbar-unselected {
 	width: 20%;
 	&:hover {
 		background: lightgrey;
 	}
+}
+
+.photos-navbar-selected {
+	width: 20%;
+	background: darkgrey;
+}
+#photos-navbar-all {
 }
 #photos-navbar-albums {
-	width: 20%;
-	&:hover {
-		background: lightgrey;
-	}
 }
 #photos-navbar-music {
-	width: 20%;
-	&:hover {
-		background: lightgrey;
-	}
 }
-#photos-route-container {
+.photos-route-container {
 	margin-left: 20%;
 	margin-right: 20%;
 	margin-top: 10%;
