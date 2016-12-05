@@ -20,6 +20,7 @@ export default Ember.Component.extend({
 					}
 				}
 			}
+			this.sendAction("changeTab", tab);
 			//Ember.$("#photos-navbar-all").addClass("photos-navbar-selected");
 
 		}
