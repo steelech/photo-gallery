@@ -1,6 +1,12 @@
-{{link-to 'codes' 'secret'}}
-
-<h2>Login</h2>
-{{input value=login placeholder="username"}}
-{{input value=password placeholder="password"}}
-<button {{action "authenticate"}}>Login</button>
+<div>
+	<h2>Login</h2>
+</div>
+<div>
+	{{input value=login placeholder="username"}}
+</div>
+<div>
+	{{input value=password placeholder="password" type="password"}}
+</div>
+<div>
+	<button {{action "authenticate"}}>Login</button>
+</div>

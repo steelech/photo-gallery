@@ -1,0 +1,19 @@
+#header {
+	height: 50px;
+	background: #7b4040;
+	border-radius: 5px;
+}
+.ember-application {
+}
+
+.login-page {
+	background: darkgrey;
+	margin-top: 10%;
+	width: 45%;
+	margin-left: 27.5%;
+	margin-right: 27.5%;
+	text-align: center;
+	border: solid .25px;
+	border-radius: 10px;
+	height: 300px;
+}

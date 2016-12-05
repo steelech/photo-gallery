@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+	classNames: ['login-page'],
 	session: Ember.inject.service('session'),
 	actions: {
 		authenticate() {
@@ -8,7 +9,7 @@ export default Ember.Component.extend({
 			this.get('session').authenticate('authenticator:devise', login, password).then(() => {
 				alert("Success!");
 			}, (err) => {
-				alert("Error obtaining token: " + err.responseText);
+				alert("Bad login creds");
 			});
 		}
 	}
