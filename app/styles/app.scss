@@ -1,11 +1,31 @@
+#photos-navbar-all {
+	width: 20%;
+	&:hover {
+		background: lightgrey;
+	}
+}
+#photos-navbar-albums {
+	width: 20%;
+	&:hover {
+		background: lightgrey;
+	}
+}
+#photos-navbar-music {
+	width: 20%;
+	&:hover {
+		background: lightgrey;
+	}
+}
 #photos-route-container {
-	margin-left: 30%;
-	margin-right: 30%;
+	margin-left: 20%;
+	margin-right: 20%;
 	margin-top: 10%;
-	width: 40%;
+	width: 60%;
 	text-align: center;
 	border: solid .1px darkgrey;
 	border-radius: 5px;
+	display: flex;
+	height: 50px;
 }
 .fa-sign-out {
 	font-size: 20px;
