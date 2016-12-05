@@ -1,12 +1,16 @@
 /* jshint node: true */
 
 module.exports = function(environment) {
+
   var ENV = {
 	  api: 'http://localhost:3000',
     modulePrefix: 'photo-gallery',
     environment: environment,
     rootURL: '/',
     locationType: 'auto',
+	  contentSecurityPolicy: {
+		  'connect-src': '*'
+	  },
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -42,6 +46,10 @@ module.exports = function(environment) {
   if (environment === 'production') {
 
   }
+	ENV['ember-simple-auth'] = {
+		routeAfterAuthentication: 'secret',
+		routeIfAlreadyAuthenticated: 'secret'
+	}
 
   return ENV;
 };
