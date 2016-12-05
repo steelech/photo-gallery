@@ -1,3 +1,8 @@
+.dashboard-content-container {
+	margin-left: 20%;
+	margin-right: 20%;
+	margin-top: 10%;
+}
 .photos-navbar-unselected {
 	width: 20%;
 	&:hover {
@@ -16,10 +21,6 @@
 #photos-navbar-music {
 }
 .photos-route-container {
-	margin-left: 20%;
-	margin-right: 20%;
-	margin-top: 10%;
-	width: 60%;
 	text-align: center;
 	border: solid .1px darkgrey;
 	border-radius: 5px;

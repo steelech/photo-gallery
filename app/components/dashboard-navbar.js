@@ -2,10 +2,10 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
 	classNames: ["photos-route-container"],
-	tab: "all",
+	tab: "albums",
 	actions: {
 		setTab(tab) {
-			var tabs = Ember.A(['all', 'albums', 'music']);
+			var tabs = Ember.A(['albums', 'music']);
 			if(this.get("tab") !== tab) {
 				this.set("tab", tab);
 
