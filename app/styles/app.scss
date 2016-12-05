@@ -1,0 +1,52 @@
+#photos-route-container {
+	margin-left: 30%;
+	margin-right: 30%;
+	margin-top: 10%;
+	width: 40%;
+	text-align: center;
+	border: solid .1px darkgrey;
+	border-radius: 5px;
+}
+.fa-sign-out {
+	font-size: 20px;
+	padding-top: 25%;
+	padding-left: 40%;
+	&:hover {
+		color: darkgreen;
+
+	}
+}
+#logout-icon {
+	height: 100%;
+}
+body {
+	margin: 0px;
+}
+#nav-header-list {
+	width: 7.5%;
+	padding-left: 92.5%;
+	height: 100%;
+
+}
+
+
+.header {
+	height: 50px;
+	background: #f3f1f1;
+	border-radius: 5px;
+	border-bottom: solid darkgrey .05px;
+}
+.ember-application {
+}
+
+.login-page {
+	background: darkgrey;
+	margin-top: 10%;
+	width: 45%;
+	margin-left: 27.5%;
+	margin-right: 27.5%;
+	text-align: center;
+	border: solid .25px;
+	border-radius: 10px;
+	height: 300px;
+}
