@@ -2,6 +2,7 @@
 
 module.exports = function(environment) {
   var ENV = {
+	  api: 'http://localhost:3000',
     modulePrefix: 'photo-gallery',
     environment: environment,
     rootURL: '/',
