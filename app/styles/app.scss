@@ -1,10 +1,22 @@
-#album {
-	width: 50%;
+.album {
+	width: 20%;
+	margin-left: 7%;
+	margin-right: 7%;
+	.fa-folder {
+		font-size: 70px;
+		color: slategrey;
+	}
+	&:hover {
+		background: lightgrey;
+		border-radius: 5px;
+	}
 }
 #album-table {
 }
 .album-row {
 	display: flex;
+	padding-top: 20px;
+	padding-bottom: 20px;
 }
 table {
 	width: 100%;
@@ -27,8 +39,9 @@ hr {
 	margin-left: 20%;
 	margin-right: 20%;
 	margin-top: 10%;
-	background: lightgrey;
+	background: white;
 	border-radius: 5px;
+	border: solid black .05px;
 }
 .photos-navbar-unselected {
 	width: 20%;

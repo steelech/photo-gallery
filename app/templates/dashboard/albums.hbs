@@ -4,7 +4,7 @@
 	{{#each model as |row|}}
 		<div class="album-row">
 			{{#each row as |album|}}
-				<div id="album">{{album.name}}</div>
+				{{album-card name=album.name}}
 			{{/each}}
 		</div>
 	{{/each}}
