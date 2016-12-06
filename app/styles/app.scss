@@ -1,3 +1,27 @@
+#pictures-header {
+	background: rgb(239, 234, 234);
+}
+
+#pictures-nav {
+	display: flex;
+	margin-top: 20px;
+	padding-left: 20%;
+	padding-right: 50%;
+}
+.pictures-nav-tab {
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 5px;
+	padding-top: 5px;
+	border-radius: 5px;
+	text-decoration: none;
+	&:hover {
+		background: white;
+		border-bottom-left-radius: 0px;
+		border-bottom-right-radius: 0px;
+	}
+}
+
 .album {
 	width: 20%;
 	margin-left: 7%;
@@ -22,6 +46,8 @@ table {
 	width: 100%;
 }
 hr {
+	margin-top: 0px;
+	margin-bottom: 0px;
 
 }
 #dashboard-content-outlet {
@@ -38,7 +64,7 @@ hr {
 .dashboard-content-container {
 	margin-left: 20%;
 	margin-right: 20%;
-	margin-top: 10%;
+	margin-top: 5%;
 	background: white;
 	border-radius: 5px;
 	border: solid black .05px;
