@@ -1,4 +1,11 @@
 <h1>Albums</h1>
-{{#each model as |album|}}
-	<p>{{album.name}}</p>
-{{/each}}
+<hr>
+<div id="album-table">
+	{{#each model as |row|}}
+		<div class="album-row">
+			{{#each row as |album|}}
+				<div id="album">{{album.name}}</div>
+			{{/each}}
+		</div>
+	{{/each}}
+</div>

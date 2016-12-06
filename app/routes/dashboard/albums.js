@@ -12,7 +12,19 @@ export default Ember.Route.extend({
 		var album3 = this.get("store").createRecord("album", {
 			name: "third album"
 		});
-		return Ember.A([album1, album2, album3]);
+		var album4 = this.get("store").createRecord("album", {
+			name: "fourth album"
+		});
+		var album5 = this.get("store").createRecord("album", {
+			name: "fifth album"
+		});
+		var album6 = this.get("store").createRecord("album", {
+			name: "sixth album"
+		});
+		var first_two = Ember.A([album1, album2]);
+		var second_two = Ember.A([album3, album4]);
+		var third_two = Ember.A([album5, album6]);
+		return Ember.A([first_two, second_two, third_two]);
 	},
 	actions: {
 	}

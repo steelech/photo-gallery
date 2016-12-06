@@ -1,5 +1,7 @@
 {{navbar-header logout="logout"}}
 <div class="dashboard-content-container">
 	{{dashboard-navbar changeTab="changeTab"}}
-	{{outlet}}
+	<div id="dashboard-content-outlet">
+		{{outlet}}
+	</div>
 </div>

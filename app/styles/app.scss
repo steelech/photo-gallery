@@ -1,5 +1,22 @@
+#album {
+	width: 50%;
+}
+#album-table {
+}
+.album-row {
+	display: flex;
+}
+table {
+	width: 100%;
+}
+hr {
+
+}
+#dashboard-content-outlet {
+	text-align: center;
+}
+
 .navbar-list-item {
-	padding-top: 14px;
 }
 .active {
 	color: black;
@@ -10,6 +27,8 @@
 	margin-left: 20%;
 	margin-right: 20%;
 	margin-top: 10%;
+	background: lightgrey;
+	border-radius: 5px;
 }
 .photos-navbar-unselected {
 	width: 20%;
@@ -39,18 +58,18 @@
 	ul {
 		display: flex;
 		list-style: none;
-		margin-top: 0px;
-		margin-bottom: 0px;
 		a {
 			border-top: 1px solid darkgrey;
 			border-bottom: 1px solid darkgrey;
 			background: black;
 			color: white;
-			padding-top: 14px;
-			padding-bottom: 18px;
+			padding-top: 16px;
+			padding-bottom: 16px;
 			padding-left: 10px;
 			padding-right: 10px;
 			text-decoration: none;
+			font-family: "Lucida Console", Monaco, monospace;
+			font-size: 14px;
 			&:hover {
 				background: #2e3c2e;
 			}
