@@ -1,7 +1,10 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-	classNames: ["photos-route-container"],
+	init() {
+		this._super(...arguments);
+	},
+	classNames: ["dashboard-navbar"],
 	tab: "albums",
 	actions: {
 		setTab(tab) {

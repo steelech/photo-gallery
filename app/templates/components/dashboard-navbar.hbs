@@ -1,6 +1,8 @@
-<div id="photos-navbar-albums" class="photos-navbar-selected" {{action "setTab" "albums"}}>
-	<b>Albums</b>
-</div>
-<div id="photos-navbar-music" class="photos-navbar-unselected" {{action "setTab" "music"}}>
-	<b>Music</b>
-</div>
+<ul>
+	<li class="navbar-list-item">
+		{{#link-to 'dashboard.albums' current-when='dashboard.albums'}}Albums{{/link-to}}
+	</li>
+	<li class="navbar-list-item">
+		{{#link-to 'dashboard.music' current-when="dashboard.music"}}Music{{/link-to}}
+	</li>
+</ul>

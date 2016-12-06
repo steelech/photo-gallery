@@ -1,3 +1,11 @@
+.navbar-list-item {
+	padding-top: 14px;
+}
+.active {
+	color: black;
+}
+
+
 .dashboard-content-container {
 	margin-left: 20%;
 	margin-right: 20%;
@@ -20,12 +28,39 @@
 }
 #photos-navbar-music {
 }
-.photos-route-container {
+.dashboard-navbar {
 	text-align: center;
 	border: solid .1px darkgrey;
 	border-radius: 5px;
 	display: flex;
 	height: 50px;
+	background: black;
+
+	ul {
+		display: flex;
+		list-style: none;
+		margin-top: 0px;
+		margin-bottom: 0px;
+		a {
+			border-top: 1px solid darkgrey;
+			border-bottom: 1px solid darkgrey;
+			background: black;
+			color: white;
+			padding-top: 14px;
+			padding-bottom: 18px;
+			padding-left: 10px;
+			padding-right: 10px;
+			text-decoration: none;
+			&:hover {
+				background: #2e3c2e;
+			}
+
+		}
+		a.active {
+			background: #1c251c; 
+		}
+
+	}
 }
 .fa-sign-out {
 	font-size: 20px;
