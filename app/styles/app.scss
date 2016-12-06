@@ -7,6 +7,11 @@
 	margin-top: 20px;
 	padding-left: 20%;
 	padding-right: 50%;
+	a.active {
+		background: white;
+		border-bottom-left-radius: 0px;
+		border-bottom-right-radius: 0px;
+	}
 }
 .pictures-nav-tab {
 	padding-left: 10px;
@@ -15,7 +20,7 @@
 	padding-top: 5px;
 	border-radius: 5px;
 	text-decoration: none;
-	&:hover {
+	&:active {
 		background: white;
 		border-bottom-left-radius: 0px;
 		border-bottom-right-radius: 0px;

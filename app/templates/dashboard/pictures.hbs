@@ -1,16 +1,8 @@
 <div id="pictures-header">
 	<b>Pictures</b>
 	<div id="pictures-nav">
-		{{#link-to 'dashboard.pictures' class="pictures-nav-tab"}}All{{/link-to}}
-		{{#link-to 'dashboard.pictures' class="pictures-nav-tab"}}Albums{{/link-to}}
+		{{#link-to 'dashboard.pictures.index' class="pictures-nav-tab"}}All{{/link-to}}
+		{{#link-to 'dashboard.pictures.albums' class="pictures-nav-tab"}}Albums{{/link-to}}
 	</div>
 </div>
-<div id="album-table">
-	{{#each model as |row|}}
-		<div class="album-row">
-			{{#each row as |album|}}
-				{{album-card name=album.name}}
-			{{/each}}
-		</div>
-	{{/each}}
-</div>
+{{outlet}}

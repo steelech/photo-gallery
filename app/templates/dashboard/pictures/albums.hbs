@@ -1,0 +1,9 @@
+<div id="album-table">
+	{{#each model as |row|}}
+		<div class="album-row">
+			{{#each row as |album|}}
+				{{album-card name=album.name}}
+			{{/each}}
+		</div>
+	{{/each}}
+</div>
