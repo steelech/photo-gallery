@@ -40,9 +40,32 @@
 		border-radius: 5px;
 	}
 }
+.picture {
+	width: 20%;
+	margin-left: 7%;
+	margin-right: 7%;
+	.fa-folder {
+		font-size: 70px;
+		color: slategrey;
+	}
+	&:hover {
+		background: lightgrey;
+		border-radius: 5px;
+	}
+
+}
 #album-table {
 }
 .album-row {
+	display: flex;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+#picture-table {
+
+}
+
+.picture-row {
 	display: flex;
 	padding-top: 20px;
 	padding-bottom: 20px;

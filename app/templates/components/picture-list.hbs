@@ -1,0 +1,9 @@
+<div id="picture-table">
+	{{#each pictures as |row|}}
+		<div class="picture-row">
+			{{#each row as |picture|}}
+				{{picture-card name=picture.name}}
+			{{/each}}
+		</div>
+	{{/each}}
+</div>

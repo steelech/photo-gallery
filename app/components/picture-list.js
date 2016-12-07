@@ -1,15 +1,12 @@
-import AuthenticatedRouteMixin from 'ember-simple-auth/mixins/authenticated-route-mixin';
-export default Ember.Route.extend(AuthenticatedRouteMixin, {
-	model() {
-		var promise = this.get("store").query("album", {});
-		return promise;
+import Ember from 'ember';
+
+export default Ember.Component.extend({
+	didReceiveAttrs() {
+		console.log("pictures:", this.get("pictures").content.get(0).record.data);
+		console.log("formatted:", this.formatPictures(this.get("pictures")));
+		this.set("pictures", this.formatPictures(this.get("pictures")));
 	},
-	setupController(controller, model) {
-		var modelRows = this.formatModel(model);
-		controller.set("modelRows", modelRows);
-		controller.set("model", model);
-	},
-	formatModel(model) {
+	formatPictures(model) {
 		var numAlbums = model.content.length;
 		var albums = model.content;
 		var rows = Math.ceil(numAlbums/3);
