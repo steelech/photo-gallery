@@ -2,7 +2,9 @@
 	{{#each albums as |row|}}
 		<div class="album-row">
 			{{#each row as |album|}}
-				{{album-card name=album.name}}
+				{{#link-to 'dashboard.pictures.albums.album' album.name class="album"}}
+					{{album-card name=album.name}}
+				{{/link-to}}
 			{{/each}}
 		</div>
 			
