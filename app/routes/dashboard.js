@@ -7,7 +7,6 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
 		if(transition.targetName == "dashboard.index") {
 			this.transitionTo("dashboard.pictures");
 		}
-		console.log("dashboard model hook: ", transition);
 	},
 	actions: {
 		logout() {

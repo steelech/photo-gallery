@@ -1,1 +1,10 @@
-<h1>Album List</h1>
+<div id="album-table">
+	{{#each albums as |row|}}
+		<div class="album-row">
+			{{#each row as |album|}}
+				{{album-card name=album.name}}
+			{{/each}}
+		</div>
+			
+	{{/each}}
+</div>

@@ -1,26 +1,35 @@
 import AuthenticatedRouteMixin from 'ember-simple-auth/mixins/authenticated-route-mixin';
 export default Ember.Route.extend(AuthenticatedRouteMixin, {
 	model() {
-		var album1 = this.get("store").createRecord("album", {
-			name: "first album"
-		});
-		var album2 = this.get("store").createRecord("album", {
-			name: "second album"
-		});
-		var album3 = this.get("store").createRecord("album", {
-			name: "third album"
-		});
-		var album4 = this.get("store").createRecord("album", {
-			name: "fourth album"
-		});
-		var album5 = this.get("store").createRecord("album", {
-			name: "fifth album"
-		});
-		var album6 = this.get("store").createRecord("album", {
-			name: "sixth album"
-		});
-		var first_three = Ember.A([album1, album2, album3]);
-		var second_three = Ember.A([album4, album5, album6]);
-		return Ember.A([first_three, second_three]);
+		var promise = this.get("store").query("album", {});
+		return promise;
 	},
+	setupController(controller, model) {
+		console.log("setting up the controller");
+		model.content.forEach(function(album) {
+			console.log("each: ", album.record.data);
+		});
+		var numAlbums = model.content.length;
+		var albums = model.content;
+		var rows = Math.ceil(numAlbums/3);
+		var modelRows = Ember.A([]);
+		// loop through each row, add 4 albums
+		// stop when count == model.content.length
+		var count = 0;
+		for(var i = 0;i < rows;i++) {
+			var row = Ember.A([]);
+			for(var j = 0;j < 3;j++) {
+				if(count < numAlbums) {
+					var album = {
+						name: albums.get(count).record.data.name
+					}
+					row.push(album);
+				}
+				count +=1;
+			}
+			modelRows.push(row);
+		}
+		controller.set("modelRows", modelRows);
+		controller.set("model", model);
+	}
 });
