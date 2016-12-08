@@ -4,7 +4,7 @@ export default Ember.Component.extend({
 	init() {
 		this._super(...arguments);
 	},
-	classNames: ["dashboard-navbar"],
+	classNames: ["center-navbar"],
 	tab: "albums",
 	actions: {
 		setTab(tab) {
