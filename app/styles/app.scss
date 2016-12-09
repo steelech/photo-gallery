@@ -1,3 +1,70 @@
+ #navbars {
+	.top-navbar {
+		height: 40px;
+		background: lightgrey;
+		border-bottom: .5px solid darkgrey;
+		#nav-header-list {
+			display: flex;
+			height: 100%;
+			padding-left: 75%;
+			padding-right: 10%;
+			.pictures-dropdown {
+				width: 33%;
+				#dropdownMenuLink {
+					margin-right: 15%;
+					margin-left: 15%;
+					height: 70%;
+					display: flex;
+					color: black;
+					margin-top: 15%;
+					margin-bottom: 15%;
+
+					&:hover {
+						color: darkgrey;
+						
+					}
+					.fa-camera {
+					}
+					.fa-caret-down {
+						
+					}
+				}
+				.dropdown-menu {
+				}
+			}
+			.music-dropdown {
+				width: 33%;
+				#dropdownMenuLink {
+					margin-right: 15%;
+					margin-left: 15%;
+					height: 70%;
+					display: flex;
+					color: black;
+					margin-top: 15%;
+					margin-bottom: 15%;
+
+					&:hover {
+						color: darkgrey;
+						
+					}
+					.fa-music {
+					}
+					.fa-caret-down {
+					}
+				}
+			}
+			#logout-icon {
+				height: 100%;
+				width: 33%;
+			}
+		}
+	}
+	.center-navbar {
+
+	}
+
+}
+
 #new-album-button {
 	padding-left: 75%
 }
@@ -87,8 +154,6 @@ hr {
 	text-align: center;
 }
 
-.navbar-list-item {
-}
 .active {
 	color: black;
 }
@@ -118,9 +183,6 @@ hr {
 #photos-navbar-albums {
 }
 #photos-navbar-music {
-}
-.center-navbar {
-
 }
 .dashboard-navbar {
 	text-align: center;
@@ -156,31 +218,10 @@ hr {
 
 	}
 }
-.fa-sign-out {
-	font-size: 20px;
-	padding-top: 25%;
-	padding-left: 40%;
-	&:hover {
-		color: darkgreen;
-
-	}
-}
-#logout-icon {
-	height: 100%;
-}
 body {
 	margin: 0px;
 }
-#nav-header-list {
-	width: 7.5%;
-	padding-left: 92.5%;
-	height: 100%;
 
-}
-
-.top-navbar {
-
-}
 .header {
 	height: 50px;
 	background: #f3f1f1;
