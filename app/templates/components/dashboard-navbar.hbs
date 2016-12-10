@@ -1,8 +1,6 @@
-<ul>
-	<li class="navbar-list-item">
-		{{#link-to 'dashboard.pictures' current-when='dashboard.pictures'}}Pictures{{/link-to}}
-	</li>
-	<li class="navbar-list-item">
-		{{#link-to 'dashboard.music' current-when="dashboard.music"}}Music{{/link-to}}
-	</li>
-</ul>
+<div id="dashboard-navlist">
+	<ul>
+			{{#link-to 'dashboard.pictures' current-when='dashboard.pictures' class="navbar-list-item"}}Pictures {{fa-icon "picture-o"}}{{/link-to}}
+			{{#link-to 'dashboard.music' current-when="dashboard.music" class="navbar-list-item"}}Music {{fa-icon "music"}}{{/link-to}}
+	</ul>
+</div>

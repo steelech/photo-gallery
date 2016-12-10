@@ -7,17 +7,18 @@
 			display: flex;
 			height: 100%;
 			padding-left: 75%;
-			padding-right: 10%;
+			padding-right: 15%;
 			.pictures-dropdown {
-				width: 33%;
+				width: 35px;
 				#dropdownMenuLink {
-					margin-right: 15%;
-					margin-left: 15%;
 					height: 70%;
 					display: flex;
 					color: black;
 					margin-top: 15%;
 					margin-bottom: 15%;
+					#camera-icon {
+						margin-right: 2px;
+					}
 
 					&:hover {
 						color: darkgrey;
@@ -30,18 +31,22 @@
 					}
 				}
 				.dropdown-menu {
+					padding-left: 5px;
+					min-width: 110px;
+					margin-right: 15px;
 				}
 			}
 			.music-dropdown {
-				width: 33%;
+				width: 35px;
 				#dropdownMenuLink {
-					margin-right: 15%;
-					margin-left: 15%;
 					height: 70%;
 					display: flex;
 					color: black;
 					margin-top: 15%;
 					margin-bottom: 15%;
+					#music-icon {
+						margin-right: 2px;
+					}
 
 					&:hover {
 						color: darkgrey;
@@ -52,17 +57,67 @@
 					.fa-caret-down {
 					}
 				}
+				.dropdown-menu {
+					min-width: 110px;
+					padding-left: 5px;
+					margin-right: 15px;
+				}
 			}
 			#logout-icon {
 				height: 100%;
 				width: 33%;
+
+				#logout-icon-container {
+					&:hover {
+						color: darkgrey;
+					}
+					height: 70%;
+					margin-left: 15%;
+					margin-right: 15%;
+					margin-top: 15%;
+					margin-bottom: 15%;
+				}
 			}
 		}
 	}
 	.center-navbar {
-
+		height: 80px;
+		background: rgba(211, 211, 211, 0.32);
+		#dashboard-navlist {
+			height: 100%;
+			margin-right: 20%;
+			margin-left: 20%;
+			ul {
+				height: 100%;
+				width: 170px;
+				margin-bottom: 0px;
+				padding-left: 0px;
+				padding-top: 50px;
+				display: flex;
+				list-style: none;
+				.navbar-list-item {
+					&:hover {
+						text-decoration: none;
+					}
+					color: #4a4848;
+					width: 50%;
+					padding-top: 2px;
+					text-align: center;
+				}
+				.navbar-list-item.active {
+					color: black;
+					border-top: .01px solid darkgrey;
+					border-right: .01px solid darkgrey;
+					border-left: .01px solid darkgrey;	
+					border-top-right-radius: 5px;
+					border-top-left-radius: 5px;
+					border-bottom: 1px solid white;
+					background: white;
+					text-decoration: none;
+				}
+			}
+		}
 	}
-
 }
 
 #new-album-button {
