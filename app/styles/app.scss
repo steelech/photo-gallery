@@ -124,6 +124,7 @@
 	padding-left: 75%
 }
 #pictures-header {
+	border-radius: 5px;
 	background: rgb(239, 234, 234);
 }
 
@@ -132,26 +133,26 @@
 	margin-top: 20px;
 	padding-left: 20%;
 	padding-right: 50%;
+	a {
+		color: darkgrey;
+		padding-left: 10px;
+		border-top-right-radius: 5px;
+		border-top-left-radius: 5px;
+		padding-right: 10px;
+		padding-bottom: 5px;
+		padding-top: 5px;
+		text-decoration: none;
+
+	}
 	a.active {
-		background: white;
-		border-bottom-left-radius: 0px;
-		border-bottom-right-radius: 0px;
+		color: #675d5d;
+		border-bottom: solid 2px black;
+		font-style: bold;
+
 	}
 }
 .pictures-nav-tab {
-	padding-left: 10px;
-	padding-right: 10px;
-	padding-bottom: 5px;
-	padding-top: 5px;
-	border-radius: 5px;
-	text-decoration: none;
-	&:active {
-		background: white;
-		border-bottom-left-radius: 0px;
-		border-bottom-right-radius: 0px;
-	}
 }
-
 .album {
 	width: 20%;
 	margin-left: 7%;
@@ -215,12 +216,13 @@ hr {
 
 
 .dashboard-content-container {
+	position: relative;
 	margin-left: 20%;
 	margin-right: 20%;
 	margin-top: 5%;
 	background: white;
 	border-radius: 5px;
-	border: solid black .05px;
+	border: solid #756161 .05px;
 }
 .photos-navbar-unselected {
 	width: 20%;
