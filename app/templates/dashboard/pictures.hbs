@@ -1,5 +1,19 @@
 <div id="pictures-header">
-	<h2>{{fa-icon "picture-o"}} Pictures</h2>
+	<div class="pictures-header-top">
+		<h2>{{fa-icon "picture-o"}} Pictures</h2>
+		<div class="buttons">
+			<div class="new-album-button">
+				<a>
+					{{fa-icon "plus"}} Create Album	
+				</a>
+			</div>
+			<div class="add-pictures-button">
+				<a>
+					Add Pics	
+				</a>
+			</div>
+		</div>
+	</div>
 	<div id="pictures-nav">
 		{{#link-to 'dashboard.pictures.index' class="pictures-nav-tab"}}All{{/link-to}}
 		{{#link-to 'dashboard.pictures.albums' class="pictures-nav-tab"}}Albums{{/link-to}}
