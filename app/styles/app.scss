@@ -106,7 +106,7 @@
 				}
 				.navbar-list-item.active {
 					color: black;
-					border-top: .01px solid darkgrey;
+					border-top: 2px solid darkgreen;
 					border-right: .01px solid darkgrey;
 					border-left: .01px solid darkgrey;	
 					border-top-right-radius: 5px;
@@ -124,15 +124,19 @@
 	padding-left: 75%
 }
 #pictures-header {
+	h2 {
+		margin-top: 0px;
+		text-align: left;
+		padding-left: 30px;
+	}
 	border-radius: 5px;
 	background: rgb(239, 234, 234);
 }
 
 #pictures-nav {
 	display: flex;
-	margin-top: 20px;
-	padding-left: 20%;
-	padding-right: 50%;
+	padding-left: 10%;
+	padding-right: 70%;
 	a {
 		color: darkgrey;
 		padding-left: 10px;

@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-	classNames: ['dashboard-content-container'],
+	classNames: [''],
 	tab: '',
 	listName: Ember.computed("tab", {
 		get() {
