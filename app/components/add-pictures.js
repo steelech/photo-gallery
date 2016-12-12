@@ -7,8 +7,6 @@ export default Ember.Component.extend({
 
 		uploadFiles() {
 			var self = this;
-			var accessKey = 'AKIAJUIQFPOP7WDB56TA';
-			var secret = '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';
 			AWS.config.region = 'us-east-2';
 			AWS.config.accessKeyId = accessKey;
 			AWS.config.secretAccessKey = secret;
