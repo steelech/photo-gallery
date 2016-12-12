@@ -8,7 +8,7 @@
 				</a>
 			</div>
 			<div class="add-pictures-button">
-				<a>
+				<a {{action "openPicturesModal"}}>
 					Add Pics	
 				</a>
 			</div>
@@ -20,3 +20,8 @@
 	</div>
 </div>
 {{outlet}}
+{{#if picturesModal}}
+	{{#modal-dialog translucentOverlay=true close="closePicturesModal"}}
+		{{add-pictures}}	
+	{{/modal-dialog}}
+{{/if}}

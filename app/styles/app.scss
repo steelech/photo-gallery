@@ -1,3 +1,68 @@
+ @import "ember-modal-dialog/ember-modal-structure";
+ @import "ember-modal-dialog/ember-modal-appearance";
+ #files-submit-button {
+	 &:hover {
+		 background: #7aca7a;
+	 }
+	 margin-top: 15px;
+	 text-align: center;
+	 margin-left: 42.5%;
+	 margin-right: 42.5%;
+	 padding-top: 5px;
+	 padding-bottom: 5px;
+	 border: .25px solid black;
+	 background: lightgreen;
+	 border-radius: 5px;
+ }
+ #drag-and-drop-container {
+	 width: 480px;
+	 height: 215px;
+	 margin-top: 20px;
+	 background: lightgrey;
+	 border-radius: 5px;
+ }
+ #import-button-container {
+	 padding-left: 45%;
+ }
+ .import-button {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+ }
+ .import-button + label {
+	 height: 30px;
+	 padding-top: 5px;
+	 padding-bottom: 5px;
+	 padding-left: 3px;
+	 padding-right: 3px;
+	 border: solid .25px black;
+	 border-radius: 5px;
+	 background: lightgrey;
+	 margin-right: 430px;
+	 &:hover {
+		 background: darkgrey;
+	 }
+ }
+ #import-button {
+	 height: 30px;
+	 padding-top: 5px;
+	 padding-bottom: 5px;
+	 padding-left: 3px;
+	 padding-right: 3px;
+	 border: solid .25px black;
+	 border-radius: 5px;
+	 background: lightgrey;
+	 margin-right: 430px;
+	 &:hover {
+		 background: darkgrey;
+	 }
+	 #import-button-input {
+
+	 }
+ }
  #navbars {
 	.top-navbar {
 		height: 40px;
@@ -347,4 +412,8 @@ body {
 	border: solid .25px;
 	border-radius: 10px;
 	height: 300px;
+}
+.ember-modal-dialog {
+	width: 500px;
+	height: 400px;
 }
