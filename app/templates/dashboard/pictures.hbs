@@ -22,6 +22,6 @@
 {{outlet}}
 {{#if picturesModal}}
 	{{#modal-dialog translucentOverlay=true close="closePicturesModal"}}
-		{{add-pictures}}	
+		{{add-pictures closePicturesModal="closePicturesModal"}}	
 	{{/modal-dialog}}
 {{/if}}

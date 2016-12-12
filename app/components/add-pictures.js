@@ -19,20 +19,21 @@ export default Ember.Component.extend({
 			for(var i = 0;i < length;i++) {
 				var params = {
 					Bucket: 'pics-and-songs',
-					Key: 'photo-gallery' + i,
+					Key: 'folder/photo-gallery' + i,
 					ContentType: self.get("fileList")[i].type,
 					Body: self.get("fileList")[i],
 
 				};
 				bucket.putObject(params, function(err, data) {
 					if (err) {
+						self.sendAction("closePicturesModal");
 						console.log("error:", err);
 					} else {
+						self.sendAction("closePicturesModal");
 						console.log("success");
 					}
-				})
+				});
 			}
-
 		}
 	}, 	
 	addToFileList(files) {
@@ -69,6 +70,6 @@ export default Ember.Component.extend({
 			e.preventDefault();
 			var files = e.originalEvent.dataTransfer.files;
 			self.addToFileList(files);
-		})
+		});
 	}
 });
