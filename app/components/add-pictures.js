@@ -4,66 +4,39 @@ export default Ember.Component.extend({
 	classNames: ['file-upload'],
 	ajax: Ember.inject.service(),
 	session: Ember.inject.service(),
+	cognito: Ember.inject.service(),
 	fileList: null,
 	actions:{
 
 		uploadFiles() {
-			console.log("sessionData:", this.get("session").get("data").authenticated);
-			var authorization = "Token token=\"" + this.get("session").get("data").authenticated.token + "\", email=\"" + this.get("session").get("data").authenticated.email + "\"";
-
 			var self = this;
-			self.get("ajax").request('/cognito', {
-				method: 'GET',
-				dataType: 'json',
-				headers: {
-					"Authorization": authorization
-				}
-			}).then(function(response) {
-				var promise = new Promise(function(resolve, reject) {
-					var creds = new AWS.CognitoIdentityCredentials({
-						IdentityPoolId: 'us-west-2:02ccbc42-bd75-4fb2-9301-09f30a628349',
-						IdentityId: response.identity_id,
-						Logins: {
-							'cognito-identity.amazonaws.com': response.token
+			console.log("uploading files");
+			this.get("cognito").getCreds().then(function(creds) {
+				console.log("temporary creds:", creds);
+				AWS.config.accessKeyId = creds.accessKeyId; 
+				AWS.config.secretAccessKey = creds.secretAccessKey;
+				AWS.config.sessionToken = creds.sessionToken;
+				AWS.config.region = 'us-west-2';
+				var bucket = new AWS.S3({
+					Bucket: 'pics-songs'
+				});
+				var length = self.get("fileList").length;
+				for(var i = 0;i < length;i++) {
+					var params = {
+						Bucket: 'pics-songs',
+						Key: 'pic' + i,
+						ContentType: self.get("fileList")[i].type,
+						Body: self.get("fileList")[i]
+					}
+					bucket.putObject(params, function(err, data) {
+						if(err) {
+							alert(err);
+						} else {
+							alert("success");
 						}
 					});
-					resolve(creds);
-				});
-				console.log("response:", response);
-				return promise;
-			}).then(function(creds) {
-				console.log("creds:", creds);
-				AWS.config.region = "us-west-2";
-				AWS.config.credentials = creds;	
-				console.log(AWS.config.credentials);
-				AWS.config.credentials.get(function() {
-					console.log("accessKeyId:", AWS.config.accessKeyId);
-					console.log(AWS.config.credentials);
-						var bucket = new AWS.S3({
-							Bucket: 'pics-songs'
-						});
-						var length = self.get("fileList").length;
-						for(var i = 0;i < length; i++) {
-							var params = {
-								Bucket: 'pics-songs',
-								Key: 'photo-gallery' + i,
-								ContentType: self.get("fileList")[i].type,
-								Body: self.get("fileList")[i]
-
-
-							}
-							bucket.putObject(params,function(err, data) {
-								if(err) {
-									alert("err");
-								} else {
-									alert("success");
-								}
-							})
-						}
-
-				});
-
-			});
+				}
+			})
 		}
 	}, 	
 	addToFileList(files) {
