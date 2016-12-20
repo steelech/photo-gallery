@@ -8,11 +8,11 @@ export default Ember.Service.extend({
 	getCreds() {
 		var self = this;
 		var promise = new Promise(function(resolve, reject){
-			if(self.isAuthenticated) {
-				resolve({accessKeyId: Cookies.get("accessKeyId"), secretAccessKey: Cookies.get("secretAccessKey"), sessionToken: Cookies.get("sessionToken")});
+			if(self.isAuthenticated()) {
+				resolve(JSON.parse(Cookies.get("cognito")));
 			} else {
 				self.authenticate().then(function(creds) {
-					resolve({accessKeyId: creds.accessKeyId, secretAccessKey: creds.secretAccessKey, sessionToken: creds.sessionToken});
+					resolve(creds);
 				})
 			}
 		});
@@ -38,14 +38,17 @@ export default Ember.Service.extend({
 		});
 	},
 	setCookies(creds) {
+		var self = this;
 		AWS.config.region = 'us-west-2';
 		AWS.config.credentials = creds;
 		var promise = new Promise(function(resolve, reject) {
 			AWS.config.credentials.get(function() {
-				Cookies.set("accessKeyId", AWS.config.credentials.accessKeyId);
-				Cookies.set("secretAccessKey", AWS.config.credentials.secretAccessKey);
-				Cookies.set("sessionToken", AWS.config.credentials.sessionToken);
-				resolve({accessKeyId: AWS.config.credentials.accessKeyId, SecretAccessKey: AWS.config.credentials.secretAccessKey, sessionToken: AWS.config.credentials.sessionToken});
+				console.log("config", AWS.config.credentials);
+				Cookies.set("cognito", { accessKeyId: AWS.config.credentials.accessKeyId, secretAccessKey: AWS.config.credentials.secretAccessKey, sessionToken: AWS.config.credentials.sessionToken }, { expires: AWS.config.credentials.expireTime });
+				self.set("accessKeyId", AWS.config.credentials.accessKeyId);
+				self.set("secretAccessKey", AWS.config.credentials.secretAccessKey);
+				self.set("sessionToken", AWS.config.credentials.sessionToken);
+				resolve({accessKeyId: AWS.config.credentials.accessKeyId, secretAccessKey: AWS.config.credentials.secretAccessKey, sessionToken: AWS.config.credentials.sessionToken});
 
 			})
 		});
@@ -67,13 +70,13 @@ export default Ember.Service.extend({
 		});
 		return promise;
 	},
-	isAuthenticated: Ember.computed('accessKeyId', 'secretAccessKey', function() {
+	isAuthenticated() {
 		if(Cookies.get("cognito")) {
-			console.log("cookies");
+			return true;
 		} else {
-			console.log("no cookies");
+			return false;
 		}
-	}),
+	},
 	sessionData() {
 		return this.get("session").get("data").authenticated;
 	}

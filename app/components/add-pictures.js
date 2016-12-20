@@ -4,39 +4,20 @@ export default Ember.Component.extend({
 	classNames: ['file-upload'],
 	ajax: Ember.inject.service(),
 	session: Ember.inject.service(),
-	cognito: Ember.inject.service(),
+	s3: Ember.inject.service(),
 	fileList: null,
 	actions:{
 
 		uploadFiles() {
+			console.log("uploading to s3");
 			var self = this;
-			console.log("uploading files");
-			this.get("cognito").getCreds().then(function(creds) {
-				console.log("temporary creds:", creds);
-				AWS.config.accessKeyId = creds.accessKeyId; 
-				AWS.config.secretAccessKey = creds.secretAccessKey;
-				AWS.config.sessionToken = creds.sessionToken;
-				AWS.config.region = 'us-west-2';
-				var bucket = new AWS.S3({
-					Bucket: 'pics-songs'
-				});
-				var length = self.get("fileList").length;
-				for(var i = 0;i < length;i++) {
-					var params = {
-						Bucket: 'pics-songs',
-						Key: 'pic' + i,
-						ContentType: self.get("fileList")[i].type,
-						Body: self.get("fileList")[i]
-					}
-					bucket.putObject(params, function(err, data) {
-						if(err) {
-							alert(err);
-						} else {
-							alert("success");
-						}
-					});
+			this.get("s3").uploadFiles(this.get("fileList")).then(function(err, data) {
+				if(err) {
+					console.log(err);
+				} else {
+					console.log(data);
 				}
-			})
+			});
 		}
 	}, 	
 	addToFileList(files) {
