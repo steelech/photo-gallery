@@ -6,10 +6,15 @@ export default Ember.Component.extend({
 	session: Ember.inject.service(),
 	s3: Ember.inject.service(),
 	fileList: null,
+	init() {
+		this._super(...arguments);
+		this.get("s3").setCreds().then(function(creds) {
+			console.log("done setting creds:", creds);
+		})
+	},
 	actions:{
 
 		uploadFiles() {
-			console.log("uploading to s3");
 			var self = this;
 			this.get("s3").uploadFiles(this.get("fileList")).then(function(err, data) {
 				if(err) {
