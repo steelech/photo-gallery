@@ -16,12 +16,11 @@ export default Ember.Component.extend({
 
 		uploadFiles() {
 			var self = this;
-			this.get("s3").uploadFiles(this.get("fileList")).then(function(err, data) {
-				if(err) {
-					console.log(err);
-				} else {
-					console.log(data);
-				}
+			this.get("s3").uploadFiles(this.get("fileList")).then(function(data) {
+					console.log("uploadedFiles:", data.files);
+					self.sendFileInfoToBackend(data.files).then(function(data) {
+						console.log("hi");
+					})
 			});
 		}
 	}, 	
@@ -36,6 +35,17 @@ export default Ember.Component.extend({
 		}
 		this.set("fileList", fileList);
 
+	},
+	sendFileInfoToBackend(files) {
+		console.log("sending file info to backend");
+		var self = this;
+		var promise = new Promise(function(resolve, reject) {
+			var length = files.length;
+			for(var i = 0;i < length;i++) {
+
+			}
+		});
+		return promise;
 	},
 	didInsertElement() {
 		var self = this;
