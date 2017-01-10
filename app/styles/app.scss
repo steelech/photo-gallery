@@ -1,12 +1,6 @@
  @import "ember-modal-dialog/ember-modal-structure";
  @import "ember-modal-dialog/ember-modal-appearance";
- #add-album-button {
-	 border: .5px solid black;
-	 border-radius: 5px;
-	 margin-left: 40%;
-	 margin-right: 40%;
-	 text-align: center;
- }
+
  #files-submit-button {
 	 &:hover {
 		 background: #7aca7a;
@@ -424,3 +418,35 @@ body {
 	width: 500px;
 	height: 400px;
 }
+.add-album-container {
+	width: 350px;
+	height: 200px;
+
+}
+#add-album-header {
+	text-align: center;
+	margin-top: 5%;
+	margin-bottom: 10%;
+}
+
+#add-album-input {
+	margin-top: 0px;
+	margin-bottom: 5%;
+	input {
+		border-radius: 5px;
+		border: 1px solid lightgrey;
+		margin-left: 27%;
+		margin-right: 27%;
+	}
+}
+
+ #add-album-button {
+	 &:hover {
+		 background: lightgrey;
+	 }
+	 border: .5px solid black;
+	 border-radius: 5px;
+	 margin-left: 35%;
+	 margin-right: 35%;
+	 text-align: center;
+ }
