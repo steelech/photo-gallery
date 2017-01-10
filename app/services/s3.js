@@ -2,25 +2,20 @@ import Ember from 'ember';
 
 export default Ember.Service.extend({
 	cognito: Ember.inject.service(),
-	uploadFiles(files) {
+	uploadPics(files) {
 		var self = this;
 		var promise = new Promise(function(resolve, reject) {
-			var length = files.length;
-			var uploadedFiles = [];
-			for(var i = 0;i < length;i++) {
-				self.uploadSingleFile(files[i]).then(function(data) {
-					uploadedFiles.push(data);
-					console.log("file data:", data);
-				}, function(err) {
-					console.log("error:", err);
-
-				});
+			var fileInfo = [];
+			for(var i = 0;i < files.length;i++) {
+				fileInfo.push(self.uploadPicToS3(files[i]))
 			}
-			resolve({files: uploadedFiles});
+			Promise.all(fileInfo).then(values => {
+				resolve(values);
+			})
 		})
 		return promise;
 	},
-	uploadSingleFile(file) {
+	uploadPicToS3(file) {
 		var promise = new Promise(function(resolve, reject) {
 			var bucket = new AWS.S3();
 			var params = {
