@@ -3,7 +3,7 @@
 		<h2>{{fa-icon "picture-o"}} Pictures</h2>
 		<div class="buttons">
 			<div class="new-album-button">
-				<a>
+				<a {{action "openAlbumsModal"}}>
 					{{fa-icon "plus"}} Create Album	
 				</a>
 			</div>
@@ -23,5 +23,10 @@
 {{#if picturesModal}}
 	{{#modal-dialog translucentOverlay=true close="closePicturesModal"}}
 		{{add-pictures closePicturesModal="closePicturesModal"}}	
+	{{/modal-dialog}}
+{{/if}}
+{{#if albumsModal}}
+	{{#modal-dialog translucentOverlay=true close="closeAlbumsModal"}}
+		{{add-album}}	
 	{{/modal-dialog}}
 {{/if}}
