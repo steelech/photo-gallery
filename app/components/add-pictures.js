@@ -15,8 +15,9 @@ export default Ember.Component.extend({
 
 		uploadFiles() {
 			var self = this;
-			this.get("s3").uploadPics(this.get("fileList")).then(fileInfo => {
-				console.log("fileInfo:", fileInfo);
+			this.get("s3").uploadPics(this.get("fileList")).then(filesResponse => {
+				console.log("filesReponse:", filesResponse)
+				self.sendFilesToBackend(filesResponse);
 			});
 		}
 	}, 	
@@ -31,22 +32,20 @@ export default Ember.Component.extend({
 		this.set("fileList", fileList);
 
 	},
-	sendFileInfoToBackend(files) {
-		var self = this;
-		var promise = new Promise(function(resolve, reject) {
-			var length = files.length;
-			var pics = [];
-			for(var i = 0;i < length;i++) {
-				var picRecord = self.get("store").createRecord("picture", {
-					name: files[i].name,
-				});
-				picRecord.save();
-				pics.push(picRecord);
+	sendFilesToBackend(files) {
+		console.log("files:", files);
+		var authenticationInfo = this.get("session").get("data").authenticated;
+		var authorization = "Token token=\"" + authenticationInfo.token + "\", email=\"" + authenticationInfo.email + "\"";
+		return this.get("ajax").request("/pictures", {
+			method: "POST",
+			dataType: 'json',
+			headers: {
+				"Authorization": authorization,
+			},
+			data: ({files : files})
+		})
+	       console.log("authorization:", authorization);	
 
-			}
-			resolve(pics);
-		});
-		return promise;
 	},
 	didInsertElement() {
 		var self = this;
