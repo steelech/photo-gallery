@@ -4,6 +4,13 @@ export default Ember.Controller.extend({
 	picturesModal: false,
 	albumsModal: false,
 	actions: {
+		addPicsToAlbum(album) {
+			this.set("albumsModal", false);
+			this.set("picturesModal", true);
+		},
+		addPicsLater() {
+			window.location.reload();
+		},
 		closeAlbumsModal() {
 			this.set("albumsModal", false);
 		},
