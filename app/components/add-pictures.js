@@ -17,7 +17,9 @@ export default Ember.Component.extend({
 			var self = this;
 			this.get("s3").uploadPics(this.get("fileList")).then(filesResponse => {
 				console.log("filesReponse:", filesResponse)
-				self.sendFilesToBackend(filesResponse);
+				self.sendFilesToBackend(filesResponse).then(function(response) {
+					console.log("response: ", response);
+				});
 			});
 		}
 	}, 	
@@ -33,7 +35,6 @@ export default Ember.Component.extend({
 
 	},
 	sendFilesToBackend(files) {
-		console.log("files:", files);
 		var authenticationInfo = this.get("session").get("data").authenticated;
 		var authorization = "Token token=\"" + authenticationInfo.token + "\", email=\"" + authenticationInfo.email + "\"";
 		return this.get("ajax").request("/pictures", {
@@ -42,10 +43,8 @@ export default Ember.Component.extend({
 			headers: {
 				"Authorization": authorization,
 			},
-			data: ({files : files})
+			data: ({files : files, numFiles: files.length})
 		})
-	       console.log("authorization:", authorization);	
-
 	},
 	didInsertElement() {
 		var self = this;

@@ -10,7 +10,8 @@ export function formatRows(data, columns) {
 		for(var j = 0;j < columns;j++) {
 			if(count < length) {
 				var formatted = {
-					name: items.get(count).record.data.name
+					key: items.get(count).record.data.key,
+					bucket: items.get(count).record.data.bucket
 				}
 				row.push(formatted);
 			}
