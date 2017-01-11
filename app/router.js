@@ -7,18 +7,25 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('login');
-  this.route('dashboard', { path: '/' }, function() {
+	this.route('login');
+	this.route('dashboard', { path: '/' }, function() {
 
-      	this.route('pictures', { path: 'pics'}, function() {
-          this.route('albums', function() {
-            this.route('album', { path: '/:album_name' });
-          });
-        });
+		//pictures
+		this.route('pictures', { path: 'pics'}, function() {
+			this.route("new");
+			this.route('albums', function() {
+				this.route('new');
+				this.route('album', { path: '/:album_name' });
+          		});
+        	});
 
-  	this.route('music');
+		//music
+		this.route('music');
+	});
 
-  });
+
+
+
 });
 
 export default Router;

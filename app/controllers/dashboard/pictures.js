@@ -1,4 +1,7 @@
 import Ember from 'ember';
+const {
+	getOwner
+} = Ember;
 
 export default Ember.Controller.extend({
 	picturesModal: false,
@@ -9,19 +12,25 @@ export default Ember.Controller.extend({
 			this.set("picturesModal", true);
 		},
 		addPicsLater() {
-			window.location.reload();
+			//window.location.reload();
 		},
 		closeAlbumsModal() {
-			this.set("albumsModal", false);
+			this.transitionToRoute()
 		},
 		openAlbumsModal() {
-			this.set("albumsModal", true);
+			this.transitionToRoute("dashboard.pictures.albums.new");
+			$('#all-pics-tab').removeClass('active');
+			$('#albums-tab').addClass('active');
 		},
 		closePicturesModal() {
 			this.set("picturesModal", false);
 		},
 		openPicturesModal() {
-			this.set("picturesModal", true);
+
+			console.log(getOwner(this).lookup('controller:application').currentPath);
+			this.transitionToRoute("dashboard.pictures.new");
+			$('#all-pics-tab').addClass('active');
+			$('#albums-tab').removeClass('active');
 		}
 
 	}
