@@ -1,6 +1,12 @@
  @import "ember-modal-dialog/ember-modal-structure";
  @import "ember-modal-dialog/ember-modal-appearance";
 
+ #add-pics-header {
+	 font-size: 35px;
+	 margin-top: 10px;
+	 margin-bottom: 20px;
+
+ }
  #files-submit-button {
 	 &:hover {
 		 background: #7aca7a;
@@ -14,16 +20,16 @@
 	 border: .25px solid black;
 	 background: lightgreen;
 	 border-radius: 5px;
+	 margin-bottom: 20px;
  }
  #drag-and-drop-container {
-	 width: 480px;
+	 width: 80%px;
 	 height: 215px;
 	 margin-top: 20px;
 	 background: lightgrey;
 	 border-radius: 5px;
- }
- #import-button-container {
-	 padding-left: 45%;
+	 margin-left: 10%;
+	 margin-right: 10%;
  }
  .import-button {
 	width: 0.1px;
@@ -35,14 +41,14 @@
  }
  .import-button + label {
 	 height: 30px;
+	 font-size: 15px;
 	 padding-top: 5px;
 	 padding-bottom: 5px;
-	 padding-left: 3px;
-	 padding-right: 3px;
+	 padding-left: 6px;
+	 padding-right: 6px;
 	 border: solid .25px black;
 	 border-radius: 5px;
 	 background: lightgrey;
-	 margin-right: 430px;
 	 &:hover {
 		 background: darkgrey;
 	 }
@@ -425,34 +431,33 @@ body {
 }
 #add-album-header {
 	text-align: center;
-	margin-top: 5%;
-	margin-bottom: 10%;
+	font-size: 35px;
+	margin-top: 10px;
+	margin-bottom: 20px;
 }
 
 #add-album-input {
-	margin-top: 0px;
-	margin-bottom: 2%;
+	margin-bottom: 10px;
 	input {
+		width: 25%;
 		border-radius: 5px;
 		border: 1px solid lightgrey;
-		margin-left: 27%;
-		margin-right: 27%;
 	}
 }
 
  #add-album-button {
+	 margin-left: 40%;
+	 margin-right: 40%;
+	 margin-bottom: 30px;
+
 	 &:hover {
 		 background: lightgrey;
 	 }
 	 border: .5px solid black;
 	 border-radius: 5px;
-	 margin-left: 35%;
-	 margin-right: 35%;
 	 text-align: center;
  }
  #add-files-checkbox {
-	 padding-left: 33%;
-	 padding-right: 33%;
-	 margin-bottom: 5%;
+	 margin-bottom: 20px;
 
  }
