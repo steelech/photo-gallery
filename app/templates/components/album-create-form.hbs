@@ -3,8 +3,8 @@
 	{{input placeholder="Album name"}}
 </div>
 <div id="add-files-checkbox">
-	{{input type='checkbox'}} Add pictures now
+	{{input type='checkbox' checked=checked}} Add pictures now
 </div>
-<div id="add-album-button">
+<div id="add-album-button" {{action "addAlbum"}}>
 	Create Album
 </div>

@@ -11,7 +11,6 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
 			this.transitionTo("dashboard.pictures.index");
 		},
 		reloadAlbums() {
-			console.log("reloading albums");
 			window.location.reload();
 		},
 	}
