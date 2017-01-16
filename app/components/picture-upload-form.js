@@ -5,11 +5,16 @@ export default Ember.Component.extend({
 	session: Ember.inject.service(),
 	s3: Ember.inject.service(),
 	fileList: null,
+	selectedAlbum: null,
 	init() {
 		this._super(...arguments);
 		this.get("s3").setCreds();
 	},
 	actions: {
+		selectAlbum(selection) {
+			this.set("selectedAlbum", selection);
+
+		},
 		uploadFiles() {
 			var self = this;
 			this.get("s3").uploadPics(this.get("fileList")).then(filesResponse => {
@@ -38,6 +43,7 @@ export default Ember.Component.extend({
 			this.set("fileList", fileList);
 	},
 	sendFilesToBackend(files) {
+		var self = this;
 		var authenticationInfo = this.get("session").get("data").authenticated;
 		var authorization = "Token token=\"" + authenticationInfo.token + "\", email=\"" + authenticationInfo.email + "\"";
 		return this.get("ajax").request("/pictures", {
@@ -46,7 +52,7 @@ export default Ember.Component.extend({
 			headers: {
 				"Authorization": authorization,
 			},
-			data: ({files : files, numFiles: files.length})
+			data: ({files : files, numFiles: files.length, album: self.get("album")})
 		})
 
 	},

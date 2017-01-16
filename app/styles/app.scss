@@ -1,6 +1,13 @@
  @import "ember-modal-dialog/ember-modal-structure";
  @import "ember-modal-dialog/ember-modal-appearance";
 
+ .albums-dropdown {
+	 width: 20%;
+	 margin-left: 40%;
+	 margin-right: 40%;
+ }
+
+
  #add-pics-header {
 	 font-size: 35px;
 	 margin-top: 10px;
