@@ -2,6 +2,13 @@ import Ember from 'ember';
 
 export default Ember.Service.extend({
 	cognito: Ember.inject.service(),
+	// 
+	getPicsFromS3(albumName) {
+
+	},
+	generatePresignedUrl() {
+
+	},
 	uploadPics(files) {
 		var self = this;
 		var promise = new Promise(function(resolve, reject) {
@@ -11,7 +18,7 @@ export default Ember.Service.extend({
 			}
 			Promise.all(fileInfo).then(values => {
 				resolve(values);
-			})
+			})	
 		})
 		return promise;
 	},

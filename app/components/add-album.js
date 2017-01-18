@@ -11,17 +11,19 @@ export default Ember.Component.extend({
 	actions: {
 		addAlbum() {
 			var self = this;
+			console.log("adding album!");
 			var album = this.get("store").createRecord("album", {
-				name: this.get("albumName"),
+				name: self.get("albumName"),
 			});
 			album.save().then(function(response) {
-				console.log("response:", response);
+				console.log("response:");
+				if(self.get('checked')) {
+					//self.sendAction("addPicsToAlbum", .name);
+					console.log("response:", response);
+				} else {
+					self.sendAction("addPicsLater");
+				}
 			});
-			if(this.get('checked')) {
-				this.sendAction("addPicsToAlbum", album.name);
-			} else {
-				this.sendAction("addPicsLater");
-			}
 		}
 	}
 

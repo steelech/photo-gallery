@@ -4,7 +4,8 @@ export default DS.Model.extend({
 	name: DS.attr(),
 	album: DS.attr(),
 	key: DS.attr(),
-	bucket: DS.attr()
+	bucket: DS.attr(),
+	url: DS.attr()
 
 
 

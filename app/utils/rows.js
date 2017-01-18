@@ -12,7 +12,9 @@ export function formatRows(data, columns) {
 				var formatted = {
 					name: items.get(count).record.data.name,
 					key: items.get(count).record.data.key,
-					bucket: items.get(count).record.data.bucket
+					bucket: items.get(count).record.data.bucket,
+					url: items.get(count).record.data.url
+					
 				}
 				row.push(formatted);
 			}
