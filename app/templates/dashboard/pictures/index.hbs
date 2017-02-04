@@ -1,6 +1,6 @@
 {{picture-list openSlideshow="openSlideshow" pictures=model}}
 {{#if slideshowMode}}
 	{{#modal-dialog container-class="slideshow-modal" translucentOverlay="true" close="closeSlideshow"}}
-		{{pic-slideshow pics=pics album="All Pictures"}}
+		{{pic-slideshow pics=pics currentPic=selectedPic album="All Pictures"}}
 	{{/modal-dialog}}
 {{/if}}

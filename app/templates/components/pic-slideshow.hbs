@@ -1,25 +1,25 @@
 <div class="slideshow-container">
-	<div id="slideshow-prev">
+	<div id="slideshow-prev" {{action "prevPic"}}>
 		{{fa-icon "arrow-left" class="left-arrow-icon"}}
 	</div>
 	<div id="slideshow-image-container">
-		<img src={{pics.url}} style="height: 550px;width: 425px;">	
+		<img src={{currentPic.url}} style="height: 550px;width: 425px;">	
 	</div>	
-	<div id="slideshow-next">
+	<div id="slideshow-next" {{action "nextPic"}}>
 		{{fa-icon "arrow-right" class="right-arrow-icon"}}
 	</div>
 </div>
 <div id="slideshow-sidebar">
 	<h1>{{album}}</h1>
 	<div id="pic-count">
-		<b>Pic 1/30</b>
+		<b>Pic {{currentPicIndex}}/{{numbPics}}</b>
 	</div>
 	<div id="slideshow-buttons">
-		<div class="download-pic-button">
+		<div class="download-pic-button" {{action "downloadPic"}}>
 			<b>Download    {{fa-icon "download"}}</b>
 		</div>
-		<div class="delete-pic-button">
-			<b>Delete</b>
+		<div class="delete-pic-button" {{action "deletePic"}}> 
+			<b>Delete      {{fa-icon "trash-o"}}</b>
 		</div>
 	</div>
 </div>

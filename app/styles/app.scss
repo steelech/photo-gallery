@@ -483,6 +483,12 @@ body {
 	 height: 100%;
 	 padding-top: 25%;
 	 padding-bottom: 50%;
+	 &:hover {
+		 i {
+			 color: white;
+		 }
+
+	 }
  }
 
  #slideshow-image-container {
@@ -496,6 +502,12 @@ body {
 	 width: 20%;
 	 padding-top: 25%;
 	 padding-bottom: 50%;
+	 &:hover {
+		 i {
+			 color: white;
+		 }
+
+	 }
  }
  
  .right-arrow-icon {
