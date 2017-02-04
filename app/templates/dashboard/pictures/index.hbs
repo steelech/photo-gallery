@@ -1,18 +1,6 @@
 {{picture-list openSlideshow="openSlideshow" pictures=model}}
 {{#if slideshowMode}}
 	{{#modal-dialog container-class="slideshow-modal" translucentOverlay="true" close="closeSlideshow"}}
-		<div class="slideshow-container">
-			<div id="slideshow-prev">
-				{{fa-icon "arrow-left" class="left-arrow-icon"}}
-			</div>
-			<div id="slideshow-image-container">
-				<img src={{pics.url}} style="height: 550px;width: 425px;">	
-			</div>	
-			<div id="slideshow-next">
-				{{fa-icon "arrow-right" class="right-arrow-icon"}}
-			</div>
-		</div>
-		<div id="slideshow-buttons">
-		</div>
+		{{pic-slideshow pics=pics album="All Pictures"}}
 	{{/modal-dialog}}
 {{/if}}

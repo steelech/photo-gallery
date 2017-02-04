@@ -1,1 +1,25 @@
-{{yield}}
+<div class="slideshow-container">
+	<div id="slideshow-prev">
+		{{fa-icon "arrow-left" class="left-arrow-icon"}}
+	</div>
+	<div id="slideshow-image-container">
+		<img src={{pics.url}} style="height: 550px;width: 425px;">	
+	</div>	
+	<div id="slideshow-next">
+		{{fa-icon "arrow-right" class="right-arrow-icon"}}
+	</div>
+</div>
+<div id="slideshow-sidebar">
+	<h1>{{album}}</h1>
+	<div id="pic-count">
+		<b>Pic 1/30</b>
+	</div>
+	<div id="slideshow-buttons">
+		<div class="download-pic-button">
+			<b>Download    {{fa-icon "download"}}</b>
+		</div>
+		<div class="delete-pic-button">
+			<b>Delete</b>
+		</div>
+	</div>
+</div>
