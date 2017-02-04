@@ -467,3 +467,49 @@ body {
 	 margin-bottom: 20px;
 
  }
+ .slideshow-modal {
+	 width: 1200px;
+	 height: 575px;
+	 background: black;
+	 display: inline-flex;
+ }
+ .slideshow-container {
+	 display: inline-flex;
+	 width: 70%;
+	 height: 100%;
+ }
+ #slideshow-prev {
+	 width: 5%;
+	 height: 100%;
+	 padding-top: 25%;
+	 padding-bottom: 50%;
+ }
+
+ #slideshow-image-container {
+	 height: 100%;
+	 width: 60%;
+	 text-align: center;
+ }
+
+ #slideshow-next {
+	 height: 100%;
+	 width: 5%;
+	 padding-top: 25%;
+	 padding-bottom: 50%;
+ }
+ 
+ .right-arrow-icon {
+	 font-size: 45px;
+	 float: left;
+ }
+  #slideshow-buttons {
+	  width: 30%;
+	  height: 100%;
+	  background: darkgrey;
+	
+  }
+
+ .left-arrow-icon {
+	 font-size: 45px;
+	 float: right;
+ }

@@ -2,6 +2,12 @@ import Ember from 'ember';
 import { formatRows } from '../utils/rows';
 
 export default Ember.Component.extend({
+	actions: {
+		openSlideshow(pic) {
+			this.sendAction("openSlideshow", pic);
+
+		}
+	},
 	didInsertElement() {
 		$('#all-pics-tab').addClass('active');
 		$('#albums-tab').removeClass('active');

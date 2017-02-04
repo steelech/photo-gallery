@@ -1,9 +1,13 @@
-<div id="picture-table">
-	{{#each pictures as |row|}}
-		<div class="picture-row">
-			{{#each row as |picture|}}
-				{{picture-card key=picture.key url=picture.url}}
-			{{/each}}
-		</div>
-	{{/each}}
-</div>
+{{#each pictures as |row|}}
+	<div class="row">
+		{{#each row as |picture|}}
+			<div class="col-md-4">
+				<div class="thumbnail">
+					<a {{action "openSlideshow" picture}}>
+						<img src={{picture.url}} style="width: 100%">
+					</a>
+				</div>
+			</div>
+		{{/each}}
+	</div>
+{{/each}}
